@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace CatalogAPI.Entities;
+namespace CustomerAPI.Entities;
 
 public class Customer
 {

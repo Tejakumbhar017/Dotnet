@@ -1,28 +1,33 @@
 using Microsoft.AspNetCore.Mvc;
-using CatalogAPI.Entities;
-using CatalogAPI.Repository;
-
-namespace CatalogAPI.Controllers;
+using CustomerAPI.Entities;
+using CustomerAPI.Repositories;
+using CustomerAPI.Services;
+namespace CustomerAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 public class CustomersController : ControllerBase
 {
+    private ICustomerServices _service;
+
+     public CustomersController(ICustomerServices svc)
+    {
+        this._service=svc;
+    }
 
     [HttpGet]
     public List<Customer> GetAll()
     {
         List<Customer> customers = new List<Customer>();
-        CustomerRepository repo = new CustomerRepository();
-        customers = repo.GetAll();
+    
+        customers = this._service.GetAll();
         return customers;
     }
 
     [HttpGet("{id}")]
         public ActionResult<Customer> GetById(int id)
         {
-            CustomerRepository repo = new CustomerRepository();
 
-            Customer customer = repo.GetById(id);
+            Customer customer = _service.GetById(id);
 
             if (customer == null)
             {
@@ -34,9 +39,9 @@ public class CustomersController : ControllerBase
     [HttpPost]
     public ActionResult<Customer> Add(Customer customer)
     {
-        CustomerRepository repo = new CustomerRepository();
+       
 
-        repo.Create(customer);
+        this._service.Create(customer);
 
         return customer;
     }
@@ -49,9 +54,7 @@ public class CustomersController : ControllerBase
             return BadRequest("Customer ID mismatch");
         }
 
-        CustomerRepository repo = new CustomerRepository();
-
-        bool result = repo.Update(customer);
+        bool result = _service.Update(customer , id);
 
         if (!result)
         {
@@ -65,9 +68,9 @@ public class CustomersController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-        CustomerRepository repo = new CustomerRepository();
+        
 
-        bool result = repo.Delete(id);
+        bool result = _service.Delete(id);
 
         if (!result)
         {

@@ -32,3 +32,4 @@ E:\TAP\dotnet\CustomerSolutions\CustomerAPI\obj\Debug\net10.0\refint\CustomerAPI
 E:\TAP\dotnet\CustomerSolutions\CustomerAPI\obj\Debug\net10.0\CustomerAPI.pdb
 E:\TAP\dotnet\CustomerSolutions\CustomerAPI\obj\Debug\net10.0\CustomerAPI.genruntimeconfig.cache
 E:\TAP\dotnet\CustomerSolutions\CustomerAPI\obj\Debug\net10.0\ref\CustomerAPI.dll
+E:\TAP\dotnet\CustomerSolutions\CustomerAPI\obj\Debug\net10.0\CustomerAPI.sourcelink.json

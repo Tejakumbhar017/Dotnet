@@ -1,8 +1,8 @@
-using CatalogAPI.Entities;
+using CustomerAPI.Entities;
 using System.Collections.Generic;
 using System.Text.Json;
 
-namespace CatalogAPI.Helpers;
+namespace CustomerAPI.Helpers;
 
 public class PersistManager
 {

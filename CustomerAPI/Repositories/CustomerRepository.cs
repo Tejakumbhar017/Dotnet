@@ -1,8 +1,9 @@
-namespace CatalogAPI.Repository;
-using CatalogAPI.Entities;
-using CatalogAPI.Helpers;
+namespace CustomerAPI.Repositories;
+using CustomerAPI.Entities;
+using CustomerAPI.Helpers;
+using CustomerAPI.Repositories;
 
-public class CustomerRepository
+public class CustomerRepository : ICustomerRepository
 {
     string filePath = @"E:\TAP\dotnet\CustomerSolutions\CustomerAPI\Data\Customer.json";
 
@@ -38,7 +39,7 @@ public class CustomerRepository
     }
 
     
-    public bool Update(Customer customerToUpdate)
+    public bool Update(Customer customerToUpdate , int id)
     {
         bool status = false;
 
