@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/OnlineShoppingSolution/">
+    <Project Path="OnlineShoppingSolution/Entities/Entities.csproj" />
+    <Project Path="OnlineShoppingSolution/Helpers/Helpers.csproj" />
+  </Folder>
+  <Folder Name="/OnlineShoppingSolution/ProductCatalogAPIoopS/">
+    <Project Path="OnlineShoppingSolution/ProductCatalogAPIoopS/ProductCatalogAPI.csproj" />
+  </Folder>
+  <Project Path="CustomerAPI/CustomerAPI.csproj" />
+</Solution>
